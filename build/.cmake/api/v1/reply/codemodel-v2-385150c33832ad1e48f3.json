@@ -1,0 +1,88 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-1e5b329344476e32d11b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "stretch_seeing_eye_ros2",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "pub::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-pub-Debug-b14a321b8b7329d501ff.json",
+					"name" : "pub",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "stretch_seeing_eye_ros2_uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-stretch_seeing_eye_ros2_uninstall-Debug-33ff5ec9e71f8b0f449a.json",
+					"name" : "stretch_seeing_eye_ros2_uninstall",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sub::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sub-Debug-297ea9d1973195dd87c4.json",
+					"name" : "sub",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "uninstall::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-uninstall-Debug-2e505df97e8279555aac.json",
+					"name" : "uninstall",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build",
+		"source" : "/home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}
