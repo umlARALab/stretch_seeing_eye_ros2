@@ -65,6 +65,7 @@ CMAKE_BINARY_DIR = /home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build
 # The main recursive "all" target.
 all: CMakeFiles/pub.dir/all
 all: CMakeFiles/sub.dir/all
+all: CMakeFiles/test_image_node.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -76,6 +77,7 @@ clean: CMakeFiles/uninstall.dir/clean
 clean: CMakeFiles/stretch_seeing_eye_ros2_uninstall.dir/clean
 clean: CMakeFiles/pub.dir/clean
 clean: CMakeFiles/sub.dir/clean
+clean: CMakeFiles/test_image_node.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -181,6 +183,32 @@ sub: CMakeFiles/sub.dir/rule
 CMakeFiles/sub.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sub.dir/build.make CMakeFiles/sub.dir/clean
 .PHONY : CMakeFiles/sub.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_image_node.dir
+
+# All Build rule for target.
+CMakeFiles/test_image_node.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_image_node.dir/build.make CMakeFiles/test_image_node.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_image_node.dir/build.make CMakeFiles/test_image_node.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build/CMakeFiles --progress-num=5,6 "Built target test_image_node"
+.PHONY : CMakeFiles/test_image_node.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_image_node.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/test_image_node.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_image_node.dir/rule
+
+# Convenience name for target.
+test_image_node: CMakeFiles/test_image_node.dir/rule
+.PHONY : test_image_node
+
+# clean rule for target.
+CMakeFiles/test_image_node.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_image_node.dir/build.make CMakeFiles/test_image_node.dir/clean
+.PHONY : CMakeFiles/test_image_node.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

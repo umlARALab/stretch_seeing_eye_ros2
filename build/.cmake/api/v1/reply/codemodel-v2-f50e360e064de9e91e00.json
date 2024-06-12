@@ -7,7 +7,7 @@
 				{
 					"build" : ".",
 					"hasInstallRule" : true,
-					"jsonFile" : "directory-.-Debug-1e5b329344476e32d11b.json",
+					"jsonFile" : "directory-.-Debug-8a88651857f7972bff83.json",
 					"minimumCMakeVersion" : 
 					{
 						"string" : "3.12"
@@ -19,7 +19,8 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4
 					]
 				}
 			],
@@ -37,7 +38,8 @@
 						0,
 						1,
 						2,
-						3
+						3,
+						4
 					]
 				}
 			],
@@ -46,7 +48,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "pub::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-pub-Debug-b14a321b8b7329d501ff.json",
+					"jsonFile" : "target-pub-Debug-650b0ac692472f44da60.json",
 					"name" : "pub",
 					"projectIndex" : 0
 				},
@@ -60,8 +62,15 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "sub::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-sub-Debug-297ea9d1973195dd87c4.json",
+					"jsonFile" : "target-sub-Debug-010d710350ff3cc14505.json",
 					"name" : "sub",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "test_image_node::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-test_image_node-Debug-f0a0468b4e5ae47c7cc0.json",
+					"name" : "test_image_node",
 					"projectIndex" : 0
 				},
 				{

@@ -2,6 +2,7 @@
 /home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build/CMakeFiles/stretch_seeing_eye_ros2_uninstall.dir
 /home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build/CMakeFiles/pub.dir
 /home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build/CMakeFiles/sub.dir
+/home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build/CMakeFiles/test_image_node.dir
 /home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build/CMakeFiles/test.dir
 /home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build/CMakeFiles/edit_cache.dir
 /home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build/CMakeFiles/rebuild_cache.dir

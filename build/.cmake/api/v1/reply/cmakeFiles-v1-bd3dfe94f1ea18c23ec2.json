@@ -3556,6 +3556,354 @@
 		},
 		{
 			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/sensor_msgsConfig-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/sensor_msgsConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/rosidl_cmake-extras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/ament_cmake_export_dependencies-extras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/ament_cmake_libraries/cmake/ament_cmake_librariesConfig-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/ament_cmake_libraries/cmake/ament_cmake_librariesConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_coreConfig-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/geometry_msgsConfig-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/geometry_msgsConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/rosidl_cmake-extras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/ament_cmake_export_dependencies-extras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/ament_cmake_libraries/cmake/ament_cmake_librariesConfig-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/ament_cmake_libraries/cmake/ament_cmake_librariesConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_coreConfig-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/ament_cmake_export_include_directories-extras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_coreConfig-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/ament_cmake_export_libraries-extras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/ament_cmake_export_targets-extras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/export_geometry_msgs__rosidl_generator_cExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/export_geometry_msgs__rosidl_generator_cExport-none.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/export_geometry_msgs__rosidl_typesupport_fastrtps_cExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/export_geometry_msgs__rosidl_typesupport_fastrtps_cExport-none.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/geometry_msgs__rosidl_typesupport_introspection_cExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/geometry_msgs__rosidl_typesupport_introspection_cExport-none.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/geometry_msgs__rosidl_typesupport_cExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/geometry_msgs__rosidl_typesupport_cExport-none.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/export_geometry_msgs__rosidl_generator_cppExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/export_geometry_msgs__rosidl_typesupport_fastrtps_cppExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/export_geometry_msgs__rosidl_typesupport_fastrtps_cppExport-none.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/geometry_msgs__rosidl_typesupport_introspection_cppExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/geometry_msgs__rosidl_typesupport_introspection_cppExport-none.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/geometry_msgs__rosidl_typesupport_cppExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/geometry_msgs__rosidl_typesupport_cppExport-none.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/export_geometry_msgs__rosidl_generator_pyExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/export_geometry_msgs__rosidl_generator_pyExport-none.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/geometry_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/ament_cmake_export_include_directories-extras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_coreConfig-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/ament_cmake_export_libraries-extras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/ament_cmake_export_targets-extras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/export_sensor_msgs__rosidl_generator_cExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/export_sensor_msgs__rosidl_generator_cExport-none.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/export_sensor_msgs__rosidl_typesupport_fastrtps_cExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/export_sensor_msgs__rosidl_typesupport_fastrtps_cExport-none.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/export_sensor_msgs__rosidl_generator_cppExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/export_sensor_msgs__rosidl_typesupport_fastrtps_cppExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/export_sensor_msgs__rosidl_typesupport_fastrtps_cppExport-none.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/sensor_msgs__rosidl_typesupport_introspection_cExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/sensor_msgs__rosidl_typesupport_introspection_cExport-none.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/sensor_msgs__rosidl_typesupport_cExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/sensor_msgs__rosidl_typesupport_cExport-none.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/sensor_msgs__rosidl_typesupport_introspection_cppExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/sensor_msgs__rosidl_typesupport_introspection_cppExport-none.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/sensor_msgs__rosidl_typesupport_cppExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/sensor_msgs__rosidl_typesupport_cppExport-none.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/export_sensor_msgs__rosidl_generator_pyExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/export_sensor_msgs__rosidl_generator_pyExport-none.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/export_sensor_msgsExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/sensor_msgs/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/cv_bridge/cmake/cv_bridgeConfig-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/cv_bridge/cmake/cv_bridgeConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/cv_bridge/cmake/cv_bridge-extras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/cv_bridge/cmake/ament_cmake_export_dependencies-extras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/ament_cmake_libraries/cmake/ament_cmake_librariesConfig-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/ament_cmake_libraries/cmake/ament_cmake_librariesConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_coreConfig-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/ament_cmake_core/cmake/ament_cmake_coreConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVConfig-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake-3.22/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVModules.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVModules-release.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/cv_bridge/cmake/ament_cmake_export_targets-extras.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/cv_bridge/cmake/export_cv_bridgeExport.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/opt/ros/humble/share/cv_bridge/cmake/export_cv_bridgeExport-none.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVConfig-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "/usr/lib/x86_64-linux-gnu/cmake/opencv4/OpenCVConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "/usr/share/cmake-3.22/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
 			"path" : "/opt/ros/humble/share/ament_lint_auto/cmake/ament_lint_autoConfig-version.cmake"
 		},
 		{

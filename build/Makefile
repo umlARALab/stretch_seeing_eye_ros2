@@ -223,6 +223,43 @@ sub/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sub.dir/build.make CMakeFiles/sub.dir/build
 .PHONY : sub/fast
 
+#=============================================================================
+# Target rules for targets named test_image_node
+
+# Build rule for target.
+test_image_node: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_image_node
+.PHONY : test_image_node
+
+# fast build rule for target.
+test_image_node/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_image_node.dir/build.make CMakeFiles/test_image_node.dir/build
+.PHONY : test_image_node/fast
+
+src/image_test_node.o: src/image_test_node.cpp.o
+.PHONY : src/image_test_node.o
+
+# target to build an object file
+src/image_test_node.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_image_node.dir/build.make CMakeFiles/test_image_node.dir/src/image_test_node.cpp.o
+.PHONY : src/image_test_node.cpp.o
+
+src/image_test_node.i: src/image_test_node.cpp.i
+.PHONY : src/image_test_node.i
+
+# target to preprocess a source file
+src/image_test_node.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_image_node.dir/build.make CMakeFiles/test_image_node.dir/src/image_test_node.cpp.i
+.PHONY : src/image_test_node.cpp.i
+
+src/image_test_node.s: src/image_test_node.cpp.s
+.PHONY : src/image_test_node.s
+
+# target to generate assembly for a file
+src/image_test_node.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_image_node.dir/build.make CMakeFiles/test_image_node.dir/src/image_test_node.cpp.s
+.PHONY : src/image_test_node.cpp.s
+
 src/pub.o: src/pub.cpp.o
 .PHONY : src/pub.o
 
@@ -288,6 +325,10 @@ help:
 	@echo "... uninstall"
 	@echo "... pub"
 	@echo "... sub"
+	@echo "... test_image_node"
+	@echo "... src/image_test_node.o"
+	@echo "... src/image_test_node.i"
+	@echo "... src/image_test_node.s"
 	@echo "... src/pub.o"
 	@echo "... src/pub.i"
 	@echo "... src/pub.s"

@@ -10,12 +10,19 @@ find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(cv_bridge REQUIRED)
+find_package(OpenCV REQUIRED)
 
 add_executable(pub src/pub.cpp)
 ament_target_dependencies(pub rclcpp std_msgs)
 
 add_executable(sub src/sub.cpp)
 ament_target_dependencies(sub rclcpp std_msgs)
+
+add_executable(test_image_node src/image_test_node.cpp)
+ament_target_dependencies(test_image_node rclcpp sensor_msgs cv_bridge OpenCV)
+
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -33,6 +40,7 @@ endif()
 install(TARGETS
   pub
   sub
+  test_image_node
   DESTINATION lib/${PROJECT_NAME})
 
 # Install launch files.
