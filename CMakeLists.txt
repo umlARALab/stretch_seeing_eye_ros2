@@ -11,6 +11,12 @@ find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
 find_package(std_msgs REQUIRED)
 
+add_executable(pub src/pub.cpp)
+ament_target_dependencies(pub rclcpp std_msgs)
+
+add_executable(sub src/sub.cpp)
+ament_target_dependencies(sub rclcpp std_msgs)
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
@@ -22,5 +28,17 @@ if(BUILD_TESTING)
   set(ament_cmake_cpplint_FOUND TRUE)
   ament_lint_auto_find_test_dependencies()
 endif()
+
+
+install(TARGETS
+  pub
+  sub
+  DESTINATION lib/${PROJECT_NAME})
+
+# Install launch files.
+install(DIRECTORY
+launch
+DESTINATION share/${PROJECT_NAME}/
+)
 
 ament_package()

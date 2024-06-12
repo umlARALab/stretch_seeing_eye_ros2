@@ -4,7 +4,7 @@
   <name>stretch_seeing_eye_ros2</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="umlaralab@gmail.com">hello-robot</maintainer>
+  <maintainer email="varad_nevasekar@student.uml.edu">Varad Nevasekar</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
@@ -15,6 +15,8 @@
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
+
+  <exec_depend>ros2launch</exec_depend>
 
   <export>
     <build_type>ament_cmake</build_type>
