@@ -4,7 +4,7 @@
 #include <rclcpp/rclcpp.hpp>
 #include <rviz_visual_tools/rviz_visual_tools.hpp>
 
-#include "stretch_seeing_eye/srv/feature.hpp"
+#include "stretch_seeing_eye_msgs/srv/feature.hpp"
 
 #define SIZE 0.2
 

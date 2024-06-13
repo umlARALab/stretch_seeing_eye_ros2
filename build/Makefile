@@ -236,6 +236,45 @@ test_image_node/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_image_node.dir/build.make CMakeFiles/test_image_node.dir/build
 .PHONY : test_image_node/fast
 
+#=============================================================================
+# Target rules for targets named publish_plane
+
+# Build rule for target.
+publish_plane: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 publish_plane
+.PHONY : publish_plane
+
+# fast build rule for target.
+publish_plane/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/publish_plane.dir/build.make CMakeFiles/publish_plane.dir/build
+.PHONY : publish_plane/fast
+
+#=============================================================================
+# Target rules for targets named ament_cmake_python_copy_stretch_seeing_eye_ros2
+
+# Build rule for target.
+ament_cmake_python_copy_stretch_seeing_eye_ros2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_copy_stretch_seeing_eye_ros2
+.PHONY : ament_cmake_python_copy_stretch_seeing_eye_ros2
+
+# fast build rule for target.
+ament_cmake_python_copy_stretch_seeing_eye_ros2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_copy_stretch_seeing_eye_ros2.dir/build.make CMakeFiles/ament_cmake_python_copy_stretch_seeing_eye_ros2.dir/build
+.PHONY : ament_cmake_python_copy_stretch_seeing_eye_ros2/fast
+
+#=============================================================================
+# Target rules for targets named ament_cmake_python_build_stretch_seeing_eye_ros2_egg
+
+# Build rule for target.
+ament_cmake_python_build_stretch_seeing_eye_ros2_egg: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ament_cmake_python_build_stretch_seeing_eye_ros2_egg
+.PHONY : ament_cmake_python_build_stretch_seeing_eye_ros2_egg
+
+# fast build rule for target.
+ament_cmake_python_build_stretch_seeing_eye_ros2_egg/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ament_cmake_python_build_stretch_seeing_eye_ros2_egg.dir/build.make CMakeFiles/ament_cmake_python_build_stretch_seeing_eye_ros2_egg.dir/build
+.PHONY : ament_cmake_python_build_stretch_seeing_eye_ros2_egg/fast
+
 src/image_test_node.o: src/image_test_node.cpp.o
 .PHONY : src/image_test_node.o
 
@@ -284,6 +323,30 @@ src/pub.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/pub.dir/build.make CMakeFiles/pub.dir/src/pub.cpp.s
 .PHONY : src/pub.cpp.s
 
+src/publish_plane.o: src/publish_plane.cpp.o
+.PHONY : src/publish_plane.o
+
+# target to build an object file
+src/publish_plane.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/publish_plane.dir/build.make CMakeFiles/publish_plane.dir/src/publish_plane.cpp.o
+.PHONY : src/publish_plane.cpp.o
+
+src/publish_plane.i: src/publish_plane.cpp.i
+.PHONY : src/publish_plane.i
+
+# target to preprocess a source file
+src/publish_plane.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/publish_plane.dir/build.make CMakeFiles/publish_plane.dir/src/publish_plane.cpp.i
+.PHONY : src/publish_plane.cpp.i
+
+src/publish_plane.s: src/publish_plane.cpp.s
+.PHONY : src/publish_plane.s
+
+# target to generate assembly for a file
+src/publish_plane.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/publish_plane.dir/build.make CMakeFiles/publish_plane.dir/src/publish_plane.cpp.s
+.PHONY : src/publish_plane.cpp.s
+
 src/sub.o: src/sub.cpp.o
 .PHONY : src/sub.o
 
@@ -321,9 +384,12 @@ help:
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... test"
+	@echo "... ament_cmake_python_build_stretch_seeing_eye_ros2_egg"
+	@echo "... ament_cmake_python_copy_stretch_seeing_eye_ros2"
 	@echo "... stretch_seeing_eye_ros2_uninstall"
 	@echo "... uninstall"
 	@echo "... pub"
+	@echo "... publish_plane"
 	@echo "... sub"
 	@echo "... test_image_node"
 	@echo "... src/image_test_node.o"
@@ -332,6 +398,9 @@ help:
 	@echo "... src/pub.o"
 	@echo "... src/pub.i"
 	@echo "... src/pub.s"
+	@echo "... src/publish_plane.o"
+	@echo "... src/publish_plane.i"
+	@echo "... src/publish_plane.s"
 	@echo "... src/sub.o"
 	@echo "... src/sub.i"
 	@echo "... src/sub.s"

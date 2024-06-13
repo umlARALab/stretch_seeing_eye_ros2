@@ -3,6 +3,9 @@
 /home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build/CMakeFiles/pub.dir
 /home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build/CMakeFiles/sub.dir
 /home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build/CMakeFiles/test_image_node.dir
+/home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build/CMakeFiles/publish_plane.dir
+/home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build/CMakeFiles/ament_cmake_python_copy_stretch_seeing_eye_ros2.dir
+/home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build/CMakeFiles/ament_cmake_python_build_stretch_seeing_eye_ros2_egg.dir
 /home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build/CMakeFiles/test.dir
 /home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build/CMakeFiles/edit_cache.dir
 /home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/build/CMakeFiles/rebuild_cache.dir

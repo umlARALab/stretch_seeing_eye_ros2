@@ -12,7 +12,12 @@ find_package(rclpy REQUIRED)
 find_package(slam_toolbox REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+find_package(nav_msgs REQUIRED)
+find_package(tf2_ros REQUIRED)
+find_package(tf2_eigen REQUIRED)
 find_package(cv_bridge REQUIRED)
+find_package(rviz_visual_tools REQUIRED)
 find_package(OpenCV REQUIRED)
 
 add_executable(pub src/pub.cpp)
@@ -24,6 +29,8 @@ ament_target_dependencies(sub rclcpp std_msgs)
 add_executable(test_image_node src/image_test_node.cpp)
 ament_target_dependencies(test_image_node rclcpp sensor_msgs cv_bridge OpenCV)
 
+add_executable(publish_plane src/publish_plane.cpp)
+ament_target_dependencies(publish_plane rclcpp std_msgs geometry_msgs tf2_ros rviz_visual_tools tf2_eigen)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -42,9 +49,13 @@ install(TARGETS
   pub
   sub
   test_image_node
+  publish_plane
   DESTINATION lib/${PROJECT_NAME})
 
-# Install launch & config files.
+# Install Python scripts
+ament_python_install_package(${PROJECT_NAME})
+
+# Install launch files.
 install(DIRECTORY
 launch
 DESTINATION share/${PROJECT_NAME}/

@@ -1,1 +1,1 @@
-rclcpp;rclpy;std_msgs;sensor_msgs;cv_bridge;ros2launch;opencv;ament_lint_auto;ament_lint_common
+rclcpp;rclpy;std_msgs;sensor_msgs;rviz_visual_tools;cv_bridge;ros2launch;opencv;ament_lint_auto;ament_lint_common
