@@ -9,6 +9,7 @@ endif()
 find_package(ament_cmake REQUIRED)
 find_package(rclcpp REQUIRED)
 find_package(rclpy REQUIRED)
+find_package(slam_toolbox REQUIRED)
 find_package(std_msgs REQUIRED)
 find_package(sensor_msgs REQUIRED)
 find_package(cv_bridge REQUIRED)
@@ -43,10 +44,15 @@ install(TARGETS
   test_image_node
   DESTINATION lib/${PROJECT_NAME})
 
-# Install launch files.
+# Install launch & config files.
 install(DIRECTORY
 launch
 DESTINATION share/${PROJECT_NAME}/
+)
+
+install(DIRECTORY
+  config
+  DESTINATION share/${PROJECT_NAME}/
 )
 
 ament_package()
