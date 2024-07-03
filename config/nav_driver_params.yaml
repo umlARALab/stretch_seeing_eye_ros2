@@ -1,0 +1,7 @@
+nav_driver:
+  ros__parameters:
+    use_gazebo: true
+
+    # Ignored if `use_gazebo` is false
+    robot_model_filename: "stretch.sdf"
+
