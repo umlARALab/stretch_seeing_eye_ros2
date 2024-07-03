@@ -52,7 +52,7 @@ def generate_launch_description():
                         "turn": LaunchConfiguration("angular")
                     }],
                     remappings=[
-                        ("/cmd_vel", LaunchConfiguration("twist_topic"))
+                        (LaunchConfiguration("twist_topic"), "/cmd_vel")
                     ]
                 )
             ]
@@ -86,7 +86,7 @@ def generate_launch_description():
                         "scale_angular": LaunchConfiguration("angular")
                     }],
                     remappings=[
-                        ("/cmd_vel", LaunchConfiguration("twist_topic"))
+                        (LaunchConfiguration("twist_topic"), "/cmd_vel")
                     ]
                 )
             ]
