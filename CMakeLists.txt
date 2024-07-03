@@ -23,8 +23,8 @@ ament_target_dependencies(sub rclcpp std_msgs)
 add_executable(test_image_node src/image_test_node.cpp)
 ament_target_dependencies(test_image_node rclcpp sensor_msgs cv_bridge OpenCV)
 
-add_executable(nav_driver src/nav_driver.cpp)
-ament_target_dependencies(nav_driver rclcpp)
+add_executable(robot_driver src/robot_driver.cpp)
+ament_target_dependencies(robot_driver rclcpp)
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
@@ -42,7 +42,7 @@ install(TARGETS
   pub
   sub
   test_image_node
-  nav_driver
+  robot_driver
   DESTINATION lib/${PROJECT_NAME})
 
 # Install launch files.
