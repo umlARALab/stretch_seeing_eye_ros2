@@ -17,11 +17,11 @@ void clear_oss_buffer(std::ostringstream& oss) {
     oss.seekp(0);  // Moves pointer back to start. Prevents unecessary reallocation.
 }
 
-class NavDriverNode : public rclcpp::Node {
+class RobotDriverNode : public rclcpp::Node {
 public:
-    NavDriverNode() : Node("nav_driver") {
+    RobotDriverNode() : Node("robot_driver") {
         timer_ = this->create_wall_timer(
-            1s, std::bind(&NavDriverNode::timer_callback, this)
+            1s, std::bind(&RobotDriverNode::timer_callback, this)
         );
     }
 private:
@@ -70,7 +70,7 @@ private:
 
 int main(int argc, char* argv[]) {
     rclcpp::init(argc, argv);
-    auto node = std::make_shared<NavDriverNode>();
+    auto node = std::make_shared<RobotDriverNode>();
     rclcpp::spin(node);
     rclcpp::shutdown();
     return 0;
