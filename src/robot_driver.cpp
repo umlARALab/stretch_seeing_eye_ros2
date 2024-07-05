@@ -29,22 +29,29 @@ private:
 
     std::vector<std::string> assert_published_topics() {
         auto topics_map = rclcpp::Node::get_topic_names_and_types();
-        std::ostringstream oss;
-
-        oss << "Topics found: " << topics_map.size();
-        RCLCPP_DEBUG(this->get_logger(), oss.str().c_str());
 
         // This is not supposed to be an exhaustive list of stretch2 topics,
         // only the ones that appear to be necessary or relevant.
-        std::vector<std::string> topics = {"/cmd_vel", "/odom"};
+        std::vector<std::string> topics = {"/seeing_eye/cmd_vel", "/seeing_eye/odom"};
         topics.erase(
             std::remove_if(
                 topics.begin(), topics.end(),
-                [topics_map](std::string s) { return topics_map.count("/seeing_eye" + s) != 0; }
+                [topics_map](std::string s) { return topics_map.count(s) != 0; }
             ),
             topics.end()
         );
         return topics;
+    }
+
+    std::string form_missing_topics_error_message(std::vector<std::string> topics) {
+        std::ostringstream oss;
+        std::copy(
+            topics.begin(), topics.end(),
+            std::ostream_iterator<std::string>(oss, ", ")
+        );
+        int last_delim_length = 2;
+        return "The following topics could not be found: "
+            + oss.str().substr(0, oss.str().size() - last_delim_length);
     }
 
     void timer_callback() {
@@ -53,12 +60,7 @@ private:
         if (missing_topics.empty()) {
             RCLCPP_INFO(this->get_logger(), "All topics found");
         } else {
-            std::ostringstream oss;
-            std::copy(
-                missing_topics.begin(), missing_topics.end(),
-                std::ostream_iterator<std::string>(oss, ", ")
-            );
-            std::string msg =  "The following topics could not be found: " + oss.str();
+            std::string msg = form_missing_topics_error_message(missing_topics);
             RCLCPP_FATAL(this->get_logger(), msg.c_str());
             // TODO: Is exiting within the node OK, or do we want to exit from main?
             exit(1);
