@@ -1,11 +1,17 @@
+import os
+
+from ament_index_python import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess, GroupAction
+from launch.actions import DeclareLaunchArgument, ExecuteProcess, \
+    GroupAction, IncludeLaunchDescription
 from launch.conditions import IfCondition
+from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_ros.actions import Node
 
 
 def generate_launch_description():
+    ros_gz_sim = get_package_share_directory("ros_gz_sim")
     return LaunchDescription([
         DeclareLaunchArgument(
             "location",
@@ -23,9 +29,20 @@ def generate_launch_description():
                 PythonExpression(["'", LaunchConfiguration("simulation_world"), "' != ''"])
             ),
             actions=[
-                ExecuteProcess(
-                    cmd=["ign", "gazebo", LaunchConfiguration("simulation_world")],
-                    output="screen"
+                IncludeLaunchDescription(
+                    PythonLaunchDescriptionSource(
+                        os.path.join(ros_gz_sim, "launch", "gz_sim.launch.py")
+                    ),
+                    launch_arguments={
+                        "gz_args": ["-r -s -v4 ", LaunchConfiguration("simulation_world")],
+                        "on_exit_shutdown": "true"
+                    }.items()
+                ),
+                IncludeLaunchDescription(
+                    PythonLaunchDescriptionSource(
+                        os.path.join(ros_gz_sim, "launch", "gz_sim.launch.py")
+                    ),
+                    launch_arguments={"gz_args": "-g -v4 "}.items()
                 )
             ]
         ),
