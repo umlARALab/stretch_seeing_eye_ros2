@@ -27,12 +27,20 @@ the topics of the original model to bind with whatever the stretch2 equivalent
 would be.
 
 This way, the Seeing-Eye Stretch source code does not need to know about which
-model is currently in use nor if it is/isn't being run in a simulation.
-The only thing the source needs to worry about is if all topics are being
-published.
+model is currently in use. The only thing the source needs to worry about is if
+all topics are being published.
 
-### Launching the Simulation (WIP)
-1. Launch the robot (or Gazebo simulation) intended to be used.
-2. Ensure that topics are being published with `ros2 topic list`
-3. Launch `robot_driver.launch.py` (*TODO: What happens here?*)
-4. (*TODO: What should happen after the robot driver?*)
+### Gazebo Simulation with Map (WIP)
+```shell
+# Shell 1
+$ ros2 launch stretch_seeing_eye_ros2 robot_driver.launch.py location:=[map directory name] simulation_world:=[Gazebo world file]
+
+# Shell 2
+# Launch your remapped robot model
+```
+
+### Real Robot Generating Map (WIP)
+**TODO**
+
+### Real Robot with Map (WIP)
+**TODO**
