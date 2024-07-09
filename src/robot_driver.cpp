@@ -31,7 +31,7 @@ private:
         auto topics_map = rclcpp::Node::get_topic_names_and_types();
 
         // This is not supposed to be an exhaustive list of stretch2 topics,
-        // only the ones that appear to be necessary or relevant.
+        // only the ones that are relevant.
         std::vector<std::string> topics = {"/seeing_eye/cmd_vel", "/seeing_eye/odom"};
         topics.erase(
             std::remove_if(

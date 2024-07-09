@@ -2,16 +2,22 @@ import os
 
 from ament_index_python import get_package_share_directory
 from launch import LaunchDescription
-from launch.actions import DeclareLaunchArgument, ExecuteProcess, \
-    GroupAction, IncludeLaunchDescription
-from launch.conditions import IfCondition
+from launch.actions import DeclareLaunchArgument, GroupAction, IncludeLaunchDescription
+from launch.conditions import IfCondition, UnlessCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PythonExpression
 from launch_ros.actions import Node
 
 
 def generate_launch_description():
-    ros_gz_sim = get_package_share_directory("ros_gz_sim")
+    ros_gz_sim = os.path.join(
+        get_package_share_directory("ros_gz_sim"),
+        "launch", "gz_sim.launch.py"
+    )
+    stretch_driver_remapped = os.path.join(
+        get_package_share_directory("stretch_seeing_eye_ros2"),
+        "launch", "stretch_driver_remapped.launch.py"
+    )
     return LaunchDescription([
         DeclareLaunchArgument(
             "location",
@@ -30,20 +36,26 @@ def generate_launch_description():
             ),
             actions=[
                 IncludeLaunchDescription(
-                    PythonLaunchDescriptionSource(
-                        os.path.join(ros_gz_sim, "launch", "gz_sim.launch.py")
-                    ),
+                    PythonLaunchDescriptionSource(ros_gz_sim),
                     launch_arguments={
-                        "gz_args": ["-r -s -v4 ", LaunchConfiguration("simulation_world")],
+                        "gz_args": ["-r -s -v3 ", LaunchConfiguration("simulation_world")],
                         "on_exit_shutdown": "true"
                     }.items()
                 ),
                 IncludeLaunchDescription(
-                    PythonLaunchDescriptionSource(
-                        os.path.join(ros_gz_sim, "launch", "gz_sim.launch.py")
-                    ),
-                    launch_arguments={"gz_args": "-g -v4 "}.items()
+                    PythonLaunchDescriptionSource(ros_gz_sim),
+                    launch_arguments={"gz_args": "-g -v3 "}.items()
                 )
+            ]
+        ),
+        GroupAction(
+            condition=UnlessCondition(
+                PythonExpression(["'", LaunchConfiguration("simulation_world"), "' != ''"])
+            ),
+            actions=[
+                IncludeLaunchDescription(
+                    PythonLaunchDescriptionSource(stretch_driver_remapped),
+                ),
             ]
         ),
         Node(
