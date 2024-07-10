@@ -3,7 +3,6 @@
 #include <geometry_msgs/msg/polygon.hpp>
 #include <rclcpp/rclcpp.hpp>
 #include <rviz_visual_tools/rviz_visual_tools.hpp>
-
 #include <stretch_seeing_eye_msgs/srv/feature.hpp>
 
 #define SIZE 0.2
@@ -18,8 +17,12 @@ enum rvt::Colors COLORS[] = {
     rvt::RED,
 };
 
-bool publish_plane(const std::shared_ptr<stretch_seeing_eye_msgs::srv::Feature::Request> req, 
+void publish_plane(const std::shared_ptr<rmw_request_id_t> request_header,
+                   const std::shared_ptr<stretch_seeing_eye_msgs::srv::Feature::Request> req, 
                    std::shared_ptr<stretch_seeing_eye_msgs::srv::Feature::Response> res) {
+    (void)request_header; // To avoid unused parameter warning
+    (void)res; // To avoid unused parameter warning
+
     RCLCPP_DEBUG(rclcpp::get_logger("rclcpp"), "Publishing plane");
 
     if (req->points.size() < 3) {
@@ -40,15 +43,14 @@ bool publish_plane(const std::shared_ptr<stretch_seeing_eye_msgs::srv::Feature::
     }
 
     visual_tools_->trigger();
-
-    return true;
 }
 
 int main(int argc, char **argv) {
     rclcpp::init(argc, argv);
     auto node = rclcpp::Node::make_shared("publish_plane");
 
-    visual_tools_ = std::make_shared<rvt::RvizVisualTools>("map", "/visualization_marker_array");
+    visual_tools_ = std::make_shared<rvt::RvizVisualTools>("map", "/visualization_marker_array", node);
+
     visual_tools_->loadMarkerPub();
 
     rclcpp::sleep_for(std::chrono::seconds(1));
