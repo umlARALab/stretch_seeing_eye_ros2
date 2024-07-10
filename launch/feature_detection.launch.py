@@ -1,7 +1,8 @@
 from launch import LaunchDescription
 from launch.actions import DeclareLaunchArgument, LogInfo
-from launch.substitutions import FindPackagePath, LaunchConfiguration
+from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
+from launch_ros.substitutions import FindPackageShare
 from os.path import join
 
 def generate_launch_description():
@@ -21,19 +22,20 @@ def generate_launch_description():
 
     # Define publish_plane_node
     publish_plane_node = Node(
-        package='stretch_seeing_eye',
-        executable='publish_plane_node',
-        name='publish_plane_node',
+        package='stretch_seeing_eye_ros2',
+        executable='publish_plane',
+        name='publish_plane',
         output='screen'
     )
 
     # Define detect_feature node
     detect_feature_node = Node(
-        package='stretch_seeing_eye',
+        package='stretch_seeing_eye_ros2',
         executable='detect_feature.py',
         name='detect_feature',
         output='screen',
-        parameters=[join(FindPackagePath('stretch_seeing_eye_ros2'), 'config', LaunchConfiguration('location'), 'feature_detection.yaml')]
+        parameters=['/home/hello-robot/ament_ws/src/stretch_seeing_eye_ros2/config/feature_detection.yaml']
+        # parameters=[join(FindPackageShare('stretch_seeing_eye_ros2').find('stretch_seeing_eye_ros2'), 'config', LaunchConfiguration('location'), 'feature_detection.yaml')]
     )
 
     return LaunchDescription([

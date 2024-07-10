@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import rclpy
 from rclpy.node import Node
 import tf2_ros
@@ -6,14 +8,14 @@ import math as Math
 
 from enum import Enum
 from std_msgs.msg import String
-from geometry_msgs.msg import Point32, Point, PointStamped
+from geometry_msgs.msg import Point, PointStamped
 from shapely.geometry import Point as ShapelyPoint
 from shapely.geometry.polygon import Polygon as ShapelyPolygon
-from nav_msgs.srv import GetPlan, GetPlan_Request, GetPlan_Response
+from nav_msgs.srv import GetPlan
 
-from stretch_seeing_eye.feature import Feature
-from stretch_seeing_eye.srv import Feature as FeatureService, Feature_Request
-from stretch_seeing_eye.msg import Door
+from stretch_seeing_eye_ros2.feature import Feature
+from stretch_seeing_eye_msgs.srv import Feature
+from stretch_seeing_eye_msgs.msg import Door
 
 MARKER_TOPIC = '/stretch_seeing_eye/create_marker'
 
@@ -40,7 +42,7 @@ class DetectFeature(Node):
         self.set_detail_level_sub = self.create_subscription(String, '/stretch_seeing_eye/set_detail_level', self.set_detail_level_callback, 1)
         self.publish_feature = self.create_publisher(Door, '/stretch_seeing_eye/feature', 1)
 
-        self.create_feature_marker = self.create_client(FeatureService, MARKER_TOPIC)
+        self.create_feature_marker = self.create_client(Feature, MARKER_TOPIC)
         while not self.create_feature_marker.wait_for_service(timeout_sec=1.0):
             self.get_logger().info('Service not available, waiting again...')
 
@@ -75,7 +77,7 @@ class DetectFeature(Node):
                     continue
                 f = Feature(line.strip())
                 self.features[f.detail_level][f.name] = f
-                req = Feature_Request(points=f.points, detail_level=f.detail_level - 1)
+                req = Feature.Request(points=f.points, detail_level=f.detail_level - 1)
                 self.create_feature_marker.call_async(req)
 
     def set_detail_level_callback(self, msg: String):
@@ -88,9 +90,11 @@ class DetectFeature(Node):
             point.header.frame_id = 'map'
             point = self.tf_buffer.transform(point, 'base_link')
             transform = self.tf_buffer.lookup_transform('map', 'base_link', rclpy.time.Time())
-        except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException):
+        except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
+            self.get_logger().error(f'Failed to transform point: {str(e)}')
             return
-        request = GetPlan_Request()
+        
+        request = GetPlan.Request()
         request.start.header.frame_id = 'map'
         request.start.pose.position.x = transform.transform.translation.x
         request.start.pose.position.y = transform.transform.translation.y
@@ -102,6 +106,7 @@ class DetectFeature(Node):
         if future.result() is not None:
             plan = future.result()
         else:
+            self.get_logger().error('Failed to get plan result')
             return
 
         length = 0
@@ -119,9 +124,10 @@ class DetectFeature(Node):
     def check_feature_polygon(self, key: str, feature: Feature):
         try:
             transform = self.tf_buffer.lookup_transform('map', 'base_link', rclpy.time.Time())
-        except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException):
-            self.get_logger().debug('No transform found')
+        except (tf2_ros.LookupException, tf2_ros.ConnectivityException, tf2_ros.ExtrapolationException) as e:
+            self.get_logger().error(f'Failed to lookup transform: {str(e)}')
             return
+        
         points = [ShapelyPoint(point.x, point.y) for point in feature.points]
         polygon = ShapelyPolygon(points)
         if polygon.distance(ShapelyPoint(transform.transform.translation.x, transform.transform.translation.y)) <= self.parameters['feature_distance']:
@@ -140,7 +146,6 @@ class DetectFeature(Node):
                 elif len(value.points) == 4 and self.previous_feature != key:
                     self.check_feature_polygon(key, value)
 
-    
     def start(self):
         rate = self.create_rate(10)
         self.previous_feature = None
@@ -148,11 +153,11 @@ class DetectFeature(Node):
             self.check_range()
             rate.sleep()
 
-
 def main(args=None):
     rclpy.init(args=args)
     detect_feature = DetectFeature()
     detect_feature.start()
+    rclpy.spin(detect_feature)
     detect_feature.destroy_node()
     rclpy.shutdown()
 

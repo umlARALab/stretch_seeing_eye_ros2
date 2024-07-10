@@ -55,6 +55,10 @@ install(TARGETS
 
 # Install Python scripts
 ament_python_install_package(${PROJECT_NAME})
+install(PROGRAMS
+    stretch_seeing_eye_ros2/detect_feature.py
+    DESTINATION lib/${PROJECT_NAME}
+)
 
 # Install launch files.
 install(DIRECTORY
