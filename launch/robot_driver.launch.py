@@ -18,6 +18,9 @@ def generate_launch_description():
         get_package_share_directory("stretch_seeing_eye_ros2"),
         "launch", "stretch_driver_remapped.launch.py"
     )
+    simulation_world_set = PythonExpression(
+        ["'", LaunchConfiguration("simulation_world"), "' != ''"]
+    )
     return LaunchDescription([
         DeclareLaunchArgument(
             "location",
@@ -31,37 +34,38 @@ def generate_launch_description():
             description="Set the Gazebo .world file to be launched (if using a simulation)"
         ),
         GroupAction(
-            condition=IfCondition(
-                PythonExpression(["'", LaunchConfiguration("simulation_world"), "' != ''"])
-            ),
+            condition=IfCondition(simulation_world_set),
             actions=[
                 IncludeLaunchDescription(
                     PythonLaunchDescriptionSource(ros_gz_sim),
                     launch_arguments={
                         "gz_args": ["-r -s -v3 ", LaunchConfiguration("simulation_world")],
-                        "on_exit_shutdown": "true"
+                        "on_exit_shutdown": "true",
+                        "use_sim_time": "true"
                     }.items()
                 ),
                 IncludeLaunchDescription(
                     PythonLaunchDescriptionSource(ros_gz_sim),
-                    launch_arguments={"gz_args": "-g -v3 "}.items()
+                    launch_arguments={
+                        "gz_args": "-g -v3 ",
+                        "use_sim_time": "true"
+                    }.items()
                 )
             ]
         ),
         GroupAction(
-            condition=UnlessCondition(
-                PythonExpression(["'", LaunchConfiguration("simulation_world"), "' != ''"])
-            ),
+            condition=UnlessCondition(simulation_world_set),
             actions=[
                 IncludeLaunchDescription(
                     PythonLaunchDescriptionSource(stretch_driver_remapped),
                 ),
             ]
-        ),
-        Node(
-            package="stretch_seeing_eye_ros2",
-            executable="robot_driver",
-            name="robot_driver",
-            output="screen"
         )
+        # Node(
+        #     package="stretch_seeing_eye_ros2",
+        #     executable="robot_driver",
+        #     name="robot_driver",
+        #     output="screen",
+        #     parameters=[{"use_simulation": IfCondition(simulation_world_set)}]
+        # )
     ])

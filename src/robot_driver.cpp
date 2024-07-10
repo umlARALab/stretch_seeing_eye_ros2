@@ -20,6 +20,8 @@ void clear_oss_buffer(std::ostringstream& oss) {
 class RobotDriverNode : public rclcpp::Node {
 public:
     RobotDriverNode() : Node("robot_driver") {
+        // this->declare_parameter("use_simulation", false);
+
         timer_ = this->create_wall_timer(
             1s, std::bind(&RobotDriverNode::timer_callback, this)
         );
@@ -56,6 +58,17 @@ private:
 
     void timer_callback() {
         timer_->cancel();
+        // bool use_simulation = this->get_parameter("use_simulation").as_bool();
+        // if (use_simulation) {
+
+        // } else {
+        //     bool stretch_driver_launched = false;
+        //     std::vector<std::string> node_names = 
+        //     while (!stretch_driver_launched) {
+
+        //         stretch_driver_launched = rclcpp::Node::get_node_names()
+        //     }
+        // }
         std::vector<std::string> missing_topics = assert_published_topics();
         if (missing_topics.empty()) {
             RCLCPP_INFO(this->get_logger(), "All topics found");
