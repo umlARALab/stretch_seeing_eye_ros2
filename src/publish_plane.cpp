@@ -4,7 +4,7 @@
 #include <rclcpp/rclcpp.hpp>
 #include <rviz_visual_tools/rviz_visual_tools.hpp>
 
-#include "stretch_seeing_eye_msgs/srv/feature.hpp"
+#include <stretch_seeing_eye_msgs/srv/feature.hpp>
 
 #define SIZE 0.2
 
@@ -12,14 +12,14 @@ namespace rvt = rviz_visual_tools;
 
 rvt::RvizVisualToolsPtr visual_tools_;
 
-enum rvt::colors COLORS[] = {
+enum rvt::Colors COLORS[] = {
     rvt::YELLOW,
     rvt::ORANGE,
     rvt::RED,
 };
 
-bool publish_plane(const std::shared_ptr<stretch_seeing_eye::srv::Feature::Request> req, 
-                   std::shared_ptr<stretch_seeing_eye::srv::Feature::Response> res) {
+bool publish_plane(const std::shared_ptr<stretch_seeing_eye_msgs::srv::Feature::Request> req, 
+                   std::shared_ptr<stretch_seeing_eye_msgs::srv::Feature::Response> res) {
     RCLCPP_DEBUG(rclcpp::get_logger("rclcpp"), "Publishing plane");
 
     if (req->points.size() < 3) {
@@ -53,7 +53,7 @@ int main(int argc, char **argv) {
 
     rclcpp::sleep_for(std::chrono::seconds(1));
 
-    auto service = node->create_service<stretch_seeing_eye::srv::Feature>(
+    auto service = node->create_service<stretch_seeing_eye_msgs::srv::Feature>(
         "/stretch_seeing_eye/create_marker", &publish_plane);
 
     rclcpp::spin(node);

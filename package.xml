@@ -17,6 +17,7 @@
   <depend>rviz_visual_tools</depend>
   <build_depend>geometry_msgs</build_depend>
   <build_depend>nav_msgs</build_depend>
+  <depend>stretch_seeing_eye_msgs</depend>
   <build_depend>tf2_ros</build_depend>
   <build_depend>tf2_eigen</build_depend>
   <depend>cv_bridge</depend>
