@@ -18,8 +18,15 @@ def generate_launch_description():
         get_package_share_directory("stretch_seeing_eye_ros2"),
         "launch", "stretch_driver_remapped.launch.py"
     )
+    mapping = os.path.join(
+        get_package_share_directory("stretch_seeing_eye_ros2"),
+        "launch", "mapping.launch.py"
+    )
     simulation_world_set = PythonExpression(
         ["'", LaunchConfiguration("simulation_world"), "' != ''"]
+    )
+    location_set = PythonExpression(
+        ["'", LaunchConfiguration("location"), "' != ''"]
     )
     return LaunchDescription([
         DeclareLaunchArgument(
@@ -57,7 +64,22 @@ def generate_launch_description():
             condition=UnlessCondition(simulation_world_set),
             actions=[
                 IncludeLaunchDescription(
-                    PythonLaunchDescriptionSource(stretch_driver_remapped),
+                    PythonLaunchDescriptionSource(stretch_driver_remapped)
+                ),
+            ]
+        ),
+        GroupAction(
+            condition=IfCondition(location_set),
+            actions=[
+                # TODO
+            ]
+        ),
+        GroupAction(
+            condition=UnlessCondition(location_set),
+            actions=[
+                IncludeLaunchDescription(
+                    PythonLaunchDescriptionSource(mapping),
+                    launch_arguments={"rviz": "true"}.items()
                 ),
             ]
         )
