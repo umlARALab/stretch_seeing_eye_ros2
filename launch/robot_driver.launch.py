@@ -61,11 +61,4 @@ def generate_launch_description():
                 ),
             ]
         )
-        # Node(
-        #     package="stretch_seeing_eye_ros2",
-        #     executable="robot_driver",
-        #     name="robot_driver",
-        #     output="screen",
-        #     parameters=[{"use_simulation": IfCondition(simulation_world_set)}]
-        # )
     ])
