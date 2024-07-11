@@ -30,6 +30,9 @@ ament_target_dependencies(sub rclcpp std_msgs)
 add_executable(test_image_node src/image_test_node.cpp)
 ament_target_dependencies(test_image_node rclcpp sensor_msgs cv_bridge OpenCV)
 
+add_executable(robot_driver src/robot_driver.cpp)
+ament_target_dependencies(robot_driver rclcpp)
+
 add_executable(publish_plane src/publish_plane.cpp)
 ament_target_dependencies(publish_plane rclcpp std_msgs geometry_msgs stretch_seeing_eye_msgs tf2_ros rviz_visual_tools tf2_eigen)
 
@@ -45,11 +48,11 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
-
 install(TARGETS
   pub
   sub
   test_image_node
+  robot_driver
   publish_plane
   DESTINATION lib/${PROJECT_NAME})
 
