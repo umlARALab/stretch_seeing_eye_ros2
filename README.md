@@ -1,5 +1,35 @@
 # Seeing-Eye Stretch
 
+## Launching the Robot
+
+### Real Robot Generating Map
+```shell
+$ ros2 launch stretch_seeing_eye_ros2 robot_driver.launch.py
+```
+
+### Real Robot with Map
+```shell
+$ ros2 launch stretch_seeing_eye_ros2 robot_driver.launch.py location:=[map directory name]
+```
+
+### Gazebo Simulation with Map
+```shell
+# Shell 1
+$ ros2 launch stretch_seeing_eye_ros2 robot_driver.launch.py location:=[map directory name] simulation_world:=[Gazebo world file]
+
+# Shell 2
+# Launch your remapped robot model
+```
+
+### Gazebo Simulation Generating Map
+```shell
+# Shell 1
+$ ros2 launch stretch_seeing_eye_ros2 robot_driver.launch.py simulation_world:=[Gazebo world file]
+
+# Shell 2
+# Launch your remapped robot model
+```
+
 ## Gazebo Inter-op
 
 > NOTE: This section is currently a WIP, with this primarily functioning more
@@ -29,18 +59,3 @@ would be.
 This way, the Seeing-Eye Stretch source code does not need to know about which
 model is currently in use. The only thing the source needs to worry about is if
 all topics are being published.
-
-### Gazebo Simulation with Map (WIP)
-```shell
-# Shell 1
-$ ros2 launch stretch_seeing_eye_ros2 robot_driver.launch.py location:=[map directory name] simulation_world:=[Gazebo world file]
-
-# Shell 2
-# Launch your remapped robot model
-```
-
-### Real Robot Generating Map (WIP)
-**TODO**
-
-### Real Robot with Map (WIP)
-**TODO**
