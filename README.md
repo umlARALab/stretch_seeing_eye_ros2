@@ -39,6 +39,7 @@ $ ros2 launch stretch_seeing_eye_ros2 robot_driver.launch.py simulation_world:=[
 - The `ros_gz` package
 ([More info](https://gazebosim.org/docs/fortress/ros_installation))
 
+### Setup
 All robot models intended to be used with Seeing-Eye Stretch should have their
 topics remapped to `/seeing_eye/topic_name_here` to prevent topic name
 conflicts with other robots, as well as to remove any confusion when working
@@ -50,3 +51,7 @@ be done is to redirect the ros-gz-bridge params file present in the cloned
 package to instead publish to the `/seeing_eye` namespace. For robot models
 that aren't the stretch2, this would also involve remapping the topics of the
 original model to bind with whatever the stretch2 equivalent would be.
+
+To make Gazebo `.world` files visible to the server, simply copy the desired
+files over to the `world` directory located in the `stretch_seeing_eye_ros2`
+package.
