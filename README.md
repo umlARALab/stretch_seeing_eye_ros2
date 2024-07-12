@@ -13,7 +13,7 @@ $ ros2 launch stretch_seeing_eye_ros2 robot_driver.launch.py location:=[map dire
 ```
 
 ### Gazebo Simulation with Map
-> See [Gazebo Inter-op](##gazebo-inter-op) for more details.
+> See [Gazebo Inter-op](#gazebo-inter-op) for more details.
 ```shell
 # Shell 1
 $ ros2 launch stretch_seeing_eye_ros2 robot_driver.launch.py location:=[map directory name] simulation_world:=[Gazebo world file]
