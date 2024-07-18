@@ -1,0 +1,5 @@
+/ImageRotateNode:
+  ros__parameters:
+    use_camera_info: false
+
+# ros2 run image_rotate image_rotate --ros-args --remap image:=/camera/color/image_raw --params-file ./rotate_image.yaml
