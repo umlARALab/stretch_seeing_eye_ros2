@@ -1,0 +1,21 @@
+laser_filter:
+  ros__parameters:
+    scan_filter_chain:
+      shadows:
+        type: laser_filters/ScanShadowsFilter
+        params:
+          min_angle: 10
+          max_angle: 170
+          neighbors: 20
+          window: 1
+      range:
+        type: laser_filters/LaserScanRangeFilter
+        params:
+          use_message_range_limits: false
+          upper_threshold: .inf
+          upper_replacement_value: .inf
+      angle:
+        type: laser_filters/LaserScanAngularBoundsFilterInPlace
+        params:
+          lower_angle: -1.47
+          upper_angle: 1.47
