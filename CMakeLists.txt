@@ -57,7 +57,7 @@ install(TARGETS
 ament_python_install_package(${PROJECT_NAME})
 install(PROGRAMS
     stretch_seeing_eye_ros2/detect_feature.py
-    stretch_seeing_eye_ros2/camera_rotate.py
+    stretch_seeing_eye_ros2/camera_info_rotate.py
     DESTINATION lib/${PROJECT_NAME}
 )
 

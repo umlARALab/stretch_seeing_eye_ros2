@@ -30,4 +30,9 @@ def generate_launch_description():
                 ("rotated/image", "/rotated/depth")
             ]
         ),
+        Node(
+            package="stretch_seeing_eye_ros2",
+            executable="camera_info_rotate.py",
+            output="screen",
+        ),
     ])
