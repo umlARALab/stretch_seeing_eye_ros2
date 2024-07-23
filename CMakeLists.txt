@@ -15,6 +15,7 @@ find_package(sensor_msgs REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
 find_package(stretch_seeing_eye_msgs REQUIRED)
+find_package(yolov8_msgs REQUIRED)
 find_package(tf2_ros REQUIRED)
 find_package(tf2_eigen REQUIRED)
 find_package(cv_bridge REQUIRED)
@@ -58,6 +59,7 @@ ament_python_install_package(${PROJECT_NAME})
 install(PROGRAMS
     stretch_seeing_eye_ros2/detect_feature.py
     stretch_seeing_eye_ros2/camera_info_rotate.py
+    stretch_seeing_eye_ros2/object_detection.py
     DESTINATION lib/${PROJECT_NAME}
 )
 
