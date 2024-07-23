@@ -6,8 +6,8 @@ from yolov8_msgs.msg import DetectionArray
 
 
 class DetectedObject:
-    def __init__(self, object_class, score) -> None:
-        self.object_class = object_class
+    def __init__(self, name, score) -> None:
+        self.name = name
         self.score = score
 
 
