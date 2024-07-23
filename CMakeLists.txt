@@ -20,6 +20,7 @@ find_package(tf2_eigen REQUIRED)
 find_package(cv_bridge REQUIRED)
 find_package(rviz_visual_tools REQUIRED)
 find_package(OpenCV REQUIRED)
+find_package(image_rotate)
 
 add_executable(pub src/pub.cpp)
 ament_target_dependencies(pub rclcpp std_msgs)
@@ -56,6 +57,7 @@ install(TARGETS
 ament_python_install_package(${PROJECT_NAME})
 install(PROGRAMS
     stretch_seeing_eye_ros2/detect_feature.py
+    stretch_seeing_eye_ros2/camera_info_rotate.py
     DESTINATION lib/${PROJECT_NAME}
 )
 
