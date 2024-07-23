@@ -17,8 +17,7 @@ def generate_launch_description():
             output="screen",
             parameters=[image_rotate_yaml],
             remappings=[
-                ("image", "/camera/color/image_raw"),
-                ("camera_info", "/camera/color/camera_info")
+                ("image", "/camera/color/image_raw")
             ]
         ),
         Node(
@@ -28,7 +27,6 @@ def generate_launch_description():
             parameters=[image_rotate_yaml],
             remappings=[
                 ("image", "/camera/depth/image_rect_raw"),
-                ("camera_info", "/camera/color/camera_info"),
                 ("rotated/image", "/rotated/depth")
             ]
         ),
