@@ -2,6 +2,24 @@
 
 ## Launching the Robot
 
+### CHANGE THIS TODO
+
+#### Launch nav
+```shell
+$ ros2 launch stretch_nav2 navigation.launch.py map:=${HELLO_FLEET_PATH}/maps/<map_name>.yaml use_rviz:=false teleop_type:=none
+$ ros2 launch nav2_bringup rviz_launch.py
+```
+launch these in separate terminal
+#### Launch mapping
+```shell
+$ ros2 launch stretch_nav2 offline_mapping.launch.py use_rviz:=false teleop_type:=none
+$ ros2 launch nav2_bringup rviz_launch.py
+```
+save using:
+```shell
+$ ros2 run nav2_map_server map_saver_cli -f ${HELLO_FLEET_PATH}/maps/<map_name>
+```
+
 ### Real Robot Generating Map
 ```shell
 $ ros2 launch stretch_seeing_eye_ros2 robot_driver.launch.py
