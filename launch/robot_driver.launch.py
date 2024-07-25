@@ -102,7 +102,8 @@ def generate_launch_description():
                 IncludeLaunchDescription(
                     PythonLaunchDescriptionSource(navigation),
                     launch_arguments={
-                        "rviz": LaunchConfiguration("rviz")
+                        "rviz": LaunchConfiguration("rviz"),
+                        "location": LaunchConfiguration("location")
                     }.items()
                 ),
             ]
