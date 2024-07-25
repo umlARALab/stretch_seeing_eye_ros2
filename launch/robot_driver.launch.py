@@ -21,6 +21,10 @@ def generate_launch_description():
         get_package_share_directory("stretch_seeing_eye_ros2"),
         "launch", "rplidar_mod.launch.py"
     )
+    navigation = os.path.join(
+        get_package_share_directory("stretch_seeing_eye_ros2"),
+        "launch", "navigation.launch.py"
+    )
     mapping = os.path.join(
         get_package_share_directory("stretch_seeing_eye_ros2"),
         "launch", "mapping.launch.py"
@@ -95,7 +99,12 @@ def generate_launch_description():
         GroupAction(
             condition=IfCondition(location_set),
             actions=[
-                # TODO
+                IncludeLaunchDescription(
+                    PythonLaunchDescriptionSource(navigation),
+                    launch_arguments={
+                        "rviz": LaunchConfiguration("rviz")
+                    }.items()
+                ),
             ]
         ),
         GroupAction(
