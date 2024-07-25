@@ -12,8 +12,8 @@ def generate_launch_description():
     )
     return LaunchDescription([
         Node(
-            package="rplidar_ros",
-            executable="rplidar_node",
+            package="sllidar_ros2",
+            executable="sllidar_node",
             name="lidar_node",
             output="screen",
             parameters=[

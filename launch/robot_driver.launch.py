@@ -18,6 +18,14 @@ def generate_launch_description():
         get_package_share_directory("stretch_seeing_eye_ros2"),
         "launch", "stretch_driver_remapped.launch.py"
     )
+    stretch_driver = os.path.join(
+        get_package_share_directory("stretch_core"),
+        "launch", "stretch_driver.launch.py"
+    )
+    rplidar = os.path.join(
+        get_package_share_directory("stretch_seeing_eye_ros2"),
+        "launch", "rplidar_mod.launch.py"
+    )
     mapping = os.path.join(
         get_package_share_directory("stretch_seeing_eye_ros2"),
         "launch", "mapping.launch.py"
@@ -73,10 +81,13 @@ def generate_launch_description():
             condition=UnlessCondition(simulation_world_set),
             actions=[
                 IncludeLaunchDescription(
-                    PythonLaunchDescriptionSource(stretch_driver_remapped),
+                    PythonLaunchDescriptionSource(stretch_driver),
                     launch_arguments={
                         "mode": "navigation"
                     }.items()
+                ),
+                IncludeLaunchDescription(
+                    PythonLaunchDescriptionSource(rplidar)
                 )
             ]
         ),
@@ -101,7 +112,7 @@ def generate_launch_description():
                 "teleop_type": LaunchConfiguration("teleop_type"),
                 "linear": "0.04",
                 "angular": "1.0",
-                "twist_topic": "/seeing_eye/cmd_vel"
+                "twist_topic": "cmd_vel"
             }.items()
-        ),
+        )
     ])
