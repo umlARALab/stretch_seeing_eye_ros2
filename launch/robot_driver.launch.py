@@ -64,8 +64,11 @@ def generate_launch_description():
             condition=UnlessCondition(simulation_world_set),
             actions=[
                 IncludeLaunchDescription(
-                    PythonLaunchDescriptionSource(stretch_driver_remapped)
-                ),
+                    PythonLaunchDescriptionSource(stretch_driver_remapped),
+                    launch_arguments={
+                        "mode": "navigation"
+                    }.items()
+                )
             ]
         ),
         GroupAction(
