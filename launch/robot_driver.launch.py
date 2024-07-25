@@ -83,7 +83,8 @@ def generate_launch_description():
                 IncludeLaunchDescription(
                     PythonLaunchDescriptionSource(stretch_driver),
                     launch_arguments={
-                        "mode": "navigation"
+                        "mode": "navigation",
+                        "broadcast_odom_tf": "True"
                     }.items()
                 ),
                 IncludeLaunchDescription(

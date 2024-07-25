@@ -11,12 +11,10 @@ def generate_launch_description():
         get_package_share_directory("stretch_seeing_eye_ros2"),
         "config/mapping.yaml"
     )
-    # NOTE: This is not going to work. The stretch_navigation pkg assumes that Rviz1 is being
-    #       used, not Rviz2.
-    # rviz_config_file = os.path.join(
-    #     get_package_share_directory("stretch_navigation"),
-    #     "rviz/mapping.rviz"
-    # )
+    rviz_config_file = os.path.join(
+        get_package_share_directory("stretch_seeing_eye_ros2"),
+        "rviz/mapping_config.rviz"
+    )
     return LaunchDescription([
         Node(
             package="slam_toolbox",
@@ -30,7 +28,7 @@ def generate_launch_description():
             executable="rviz2",
             name="rviz2",
             output="log",
-            # arguments=["-d", rviz_config_file], | TODO: Create new rviz2 config file
+            arguments=["-d", rviz_config_file],
             condition=IfCondition(LaunchConfiguration("rviz"))
         )
     ])

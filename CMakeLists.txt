@@ -73,6 +73,11 @@ install(DIRECTORY
 )
 
 install(DIRECTORY
+  rviz
+  DESTINATION share/${PROJECT_NAME}/
+)
+
+install(DIRECTORY
   world
   DESTINATION share/${PROJECT_NAME}/
 )
