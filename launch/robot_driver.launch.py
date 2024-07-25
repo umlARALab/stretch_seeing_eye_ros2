@@ -22,6 +22,10 @@ def generate_launch_description():
         get_package_share_directory("stretch_seeing_eye_ros2"),
         "launch", "mapping.launch.py"
     )
+    teleop_twist_include = os.path.join(
+        get_package_share_directory("stretch_seeing_eye_ros2"),
+        "launch/teleop_twist.launch.py"
+    )
     simulation_world_set = PythonExpression(
         ["'", LaunchConfiguration("simulation_world"), "' != ''"]
     )
@@ -39,6 +43,11 @@ def generate_launch_description():
             "simulation_world",
             default_value="",
             description="Set the Gazebo .world file to be launched (if using a simulation)"
+        ),
+        DeclareLaunchArgument(
+            "teleop_type",
+            default_value="keyboard",
+            description="Set teleop controller ('keyboard', 'joystick', or 'none')"
         ),
         GroupAction(
             condition=IfCondition(simulation_world_set),
@@ -85,5 +94,14 @@ def generate_launch_description():
                     launch_arguments={"rviz": "true"}.items()
                 ),
             ]
-        )
+        ),
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource([teleop_twist_include]),
+            launch_arguments={
+                "teleop_type": LaunchConfiguration("teleop_type"),
+                "linear": "0.04",
+                "angular": "1.0",
+                "twist_topic": "/seeing_eye/cmd_vel"
+            }.items()
+        ),
     ])
