@@ -6,17 +6,12 @@ from launch.actions import DeclareLaunchArgument, GroupAction, IncludeLaunchDesc
 from launch.conditions import IfCondition, UnlessCondition
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import LaunchConfiguration, PythonExpression
-from launch_ros.actions import Node
 
 
 def generate_launch_description():
     ros_gz_sim = os.path.join(
         get_package_share_directory("ros_gz_sim"),
         "launch", "gz_sim.launch.py"
-    )
-    stretch_driver_remapped = os.path.join(
-        get_package_share_directory("stretch_seeing_eye_ros2"),
-        "launch", "stretch_driver_remapped.launch.py"
     )
     stretch_driver = os.path.join(
         get_package_share_directory("stretch_core"),
@@ -51,6 +46,11 @@ def generate_launch_description():
             "simulation_world",
             default_value="",
             description="Set the Gazebo .world file to be launched (if using a simulation)"
+        ),
+        DeclareLaunchArgument(
+            "rviz",
+            default_value="true",
+            description="Whether to show rviz"
         ),
         DeclareLaunchArgument(
             "teleop_type",
@@ -102,7 +102,9 @@ def generate_launch_description():
             actions=[
                 IncludeLaunchDescription(
                     PythonLaunchDescriptionSource(mapping),
-                    launch_arguments={"rviz": "true"}.items()
+                    launch_arguments={
+                        "rviz": LaunchConfiguration("rviz")
+                    }.items()
                 ),
             ]
         ),
