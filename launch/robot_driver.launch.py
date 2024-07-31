@@ -103,7 +103,8 @@ def generate_launch_description():
                     PythonLaunchDescriptionSource(navigation),
                     launch_arguments={
                         "rviz": LaunchConfiguration("rviz"),
-                        "location": LaunchConfiguration("location")
+                        "location": LaunchConfiguration("location"),
+                        "use_sim_time": simulation_world_set
                     }.items()
                 ),
             ]
