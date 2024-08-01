@@ -126,7 +126,7 @@ def generate_launch_description():
                 "teleop_type": LaunchConfiguration("teleop_type"),
                 "linear": "0.04",
                 "angular": "1.0",
-                "twist_topic": "cmd_vel"
+                "twist_topic": "stretch/cmd_vel"
             }.items()
         )
     ])
